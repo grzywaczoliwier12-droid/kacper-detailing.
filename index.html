@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kacper Detailing</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <nav>
+            <div class="logo">KACPER DETAILING</div>
+
+            <div class="menu">
+                <a href="#oferta">Oferta</a>
+                <a href="#realizacje">Realizacje</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+
+            <button class="menu-toggle">☰</button>
+        </nav>
+
+        <div class="hero-content">
+
+            <p class="small-title">PROFESJONALNY DETAILING</p>
+
+            <h1>
+                Kacper<br>
+                <span>Detailing</span>
+            </h1>
+
+            <p class="description">
+                Zadbaj o swój samochód jak nigdy wcześniej.
+                Profesjonalna pielęgnacja, czyszczenie i korekta lakieru.
+            </p>
+
+            <a class="button" href="#kontakt">
+                Umów termin →
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <section id="oferta">
+
+        <h2>Nasza oferta</h2>
+
+        <div>
+            <h3>Mycie detailingowe</h3>
+            <p>Dokładne mycie i pielęgnacja samochodu.</p>
+            <strong>od 150 zł</strong>
+        </div>
+
+        <div>
+            <h3>Detailing wnętrza</h3>
+            <p>Kompleksowe czyszczenie i odświeżenie wnętrza.</p>
+            <strong>od 250 zł</strong>
+        </div>
+
+        <div>
+            <h3>Polerowanie lakieru</h3>
+            <p>Przywracanie blasku i poprawa wyglądu lakieru.</p>
+            <strong>od 400 zł</strong>
+        </div>
+
+    </section>
+
+
+    <section id="realizacje" class="gallery-section">
+
+        <div class="gallery-header">
+
+            <p class="gallery-label">NASZE REALIZACJE</p>
+
+            <h2>Efekty naszej pracy</h2>
+
+            <p class="gallery-description">
+                Zobacz wybrane realizacje wykonane w naszym studiu detailingowym.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img src="images/image.png" alt="BMW po detailingu">
+
+                <div class="gallery-overlay">
+                    <span>BMW M4</span>
+                    <p>Korekta lakieru + detailing</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+                <img src="images/image copy.png" alt="Audi po detailingu">
+
+                <div class="gallery-overlay">
+                    <span>Audi RS6</span>
+                    <p>Detailing zewnętrzny</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+                <img src="images/image copy 2.png" alt="Mercedes po detailingu">
+
+                <div class="gallery-overlay">
+                    <span>Mercedes-AMG</span>
+                    <p>Polerowanie lakieru</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+                <img src="images/image copy 3.png" alt="Porsche po detailingu">
+
+                <div class="gallery-overlay">
+                    <span>Porsche 911</span>
+                    <p>Pełny detailing</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+                <img src="images/image copy 4.png" alt="BMW po korekcie lakieru">
+
+                <div class="gallery-overlay">
+                    <span>BMW M3</span>
+                    <p>Korekta lakieru</p>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+                <img src="images/image copy 5.png" alt="Audi po detailingu">
+
+                <div class="gallery-overlay">
+                    <span>Audi S5</span>
+                    <p>Detailing wnętrza</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<!-- =========================
+     OPINIE KLIENTÓW
+========================= -->
+
+<section id="opinie" class="reviews-section">
+
+    <div class="reviews-header">
+        <p class="reviews-label">OPINIE KLIENTÓW</p>
+        <h2>Co mówią o naszej pracy</h2>
+        <p class="reviews-description">
+            Zadowolenie klientów jest dla nas najważniejsze.
+        </p>
+    </div>
+    <div class="review-form">
+
+    <h3>Dodaj swoją opinię</h3>
+
+    <form id="review-form">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Twoje imię"
+            required
+        >
+
+        <select name="rating" required>
+            <option value="">Ocena</option>
+            <option value="5">★★★★★ — 5/5</option>
+            <option value="4">★★★★☆ — 4/5</option>
+            <option value="3">★★★☆☆ — 3/5</option>
+            <option value="2">★★☆☆☆ — 2/5</option>
+            <option value="1">★☆☆☆☆ — 1/5</option>
+        </select>
+
+        <select name="service" required>
+            <option value="">Wybierz usługę</option>
+            <option>Detailing wnętrza</option>
+            <option>Detailing zewnętrzny</option>
+            <option>Korekta lakieru</option>
+            <option>Pełny detailing</option>
+        </select>
+
+        <textarea
+            name="review"
+            placeholder="Napisz swoją opinię..."
+            rows="5"
+            required
+        ></textarea>
+
+        <button type="submit">
+            Wyślij opinię →
+        </button>
+
+        <p id="review-success" style="display:none;">
+            Dziękujemy! Opinia została wysłana do zatwierdzenia. ✓
+        </p>
+
+    </form>
+
+</div>
+
+    <div class="reviews-grid" id="reviews-grid"></div>
+
+
+
+</section>
+
+<!-- KONTAKT -->
+
+<section id="kontakt" class="contact-section">
+    <section id="kontakt" class="contact-section">
+
+        <div class="contact-header">
+
+            <p class="contact-label">KONTAKT</p>
+
+            <h2>Umów swój detailing</h2>
+
+            <p class="contact-description">
+                Masz pytania albo chcesz umówić termin?
+                Napisz do nas — odezwiemy się jak najszybciej.
+            </p>
+
+        </div>
+
+
+        <div class="contact-box">
+
+
+            <form id="contact-form">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Imię"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Numer telefonu"
+                    required
+                >
+
+                <select name="service" required>
+
+                    <option value="">
+                        Wybierz usługę
+                    </option>
+
+                    <option>
+                        Detailing wnętrza
+                    </option>
+
+                    <option>
+                        Detailing zewnętrzny
+                    </option>
+
+                    <option>
+                        Korekta lakieru
+                    </option>
+
+                    <option>
+                        Pełny detailing
+                    </option>
+
+                </select>
+
+
+                <textarea
+                    name="message"
+                    placeholder="Napisz, czego potrzebujesz..."
+                    rows="5"
+                ></textarea>
+
+
+                <button type="submit">
+                    Wyślij zapytanie →
+                </button>
+
+
+                <div id="form-success">
+
+                    <strong>
+                        Dziękujemy za kontakt! ✓
+                    </strong>
+
+                    <p>
+                        Otrzymaliśmy Twoje zapytanie.
+                        Odezwiemy się jak najszybciej.
+                    </p>
+
+                </div>
+
+            </form>
+
+
+            <div class="instagram-box">
+
+                <span>INSTAGRAM</span>
+
+                <h3>
+                    Zobacz nasze realizacje
+                </h3>
+
+                <a
+                    href="https://www.instagram.com/kacper_detaling/"
+                    target="_blank"
+                >
+                    📸 @kacper_detaling
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Kacper Detailing
+        </p>
+
+    </footer>
+
+
+    <!-- PŁYNNE PRZEWIJANIE -->
+
+    <script>
+
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+            link.addEventListener('click', function(e) {
+
+                const target =
+                    document.querySelector(this.getAttribute('href'));
+
+                if (!target) return;
+
+                e.preventDefault();
+
+                document.body.classList.add('scroll-transition');
+
+                setTimeout(() => {
+
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                }, 150);
+
+
+                setTimeout(() => {
+
+                    document.body.classList.remove('scroll-transition');
+
+                }, 600);
+
+            });
+
+        });
+
+    </script>
+
+
+    <!-- FORMULARZ FORMSPREE -->
+
+    <script>
+
+        const form =
+            document.getElementById("contact-form");
+
+        const success =
+            document.getElementById("form-success");
+
+
+        form.addEventListener("submit", async function(e) {
+
+            e.preventDefault();
+
+            const button =
+                form.querySelector("button");
+
+
+            button.textContent =
+                "Wysyłanie...";
+
+            button.disabled = true;
+
+
+            const data =
+                new FormData(form);
+
+
+            try {
+
+                const response = await fetch(
+                    "https://formspree.io/f/xgaelvgr",
+                    {
+                        method: "POST",
+
+                        body: data,
+
+                        headers: {
+                            "Accept": "application/json"
+                        }
+                    }
+                );
+
+
+                if (response.ok) {
+
+                    form.reset();
+
+                    success.style.display =
+                        "block";
+
+                    button.textContent =
+                        "Wysłano ✓";
+
+                } else {
+
+                    button.textContent =
+                        "Błąd — spróbuj ponownie";
+
+                    button.disabled =
+                        false;
+
+                }
+
+            } catch (error) {
+
+                button.textContent =
+                    "Błąd — spróbuj ponownie";
+
+                button.disabled =
+                    false;
+
+            }
+
+        });
+
+    </script>
+
+
+    <!-- MENU MOBILNE -->
+
+    <script>
+
+        const menuToggle =
+            document.querySelector(".menu-toggle");
+
+        const menu =
+            document.querySelector(".menu");
+
+
+        menuToggle.addEventListener("click", () => {
+
+            menu.classList.toggle("active");
+
+
+            if (menu.classList.contains("active")) {
+
+                menuToggle.textContent = "✕";
+
+            } else {
+
+                menuToggle.textContent = "☰";
+
+            }
+
+        });
+
+
+        document.querySelectorAll(".menu a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                menu.classList.remove("active");
+
+                menuToggle.textContent = "☰";
+
+            });
+
+        });
+
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://orkfucnnfbxgondoorlz.supabase.co";
+const SUPABASE_KEY = "sb_publishable_kcdSiQ5bo0xh6rgOqPdWAw_IBxHcMrq";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+</script>
+<script>
+const reviewForm = document.getElementById("review-form");
+
+reviewForm.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const button = reviewForm.querySelector("button");
+
+    button.textContent = "Wysyłanie...";
+    button.disabled = true;
+
+    const name = reviewForm.querySelector('[name="name"]').value;
+    const rating = reviewForm.querySelector('[name="rating"]').value;
+    const service = reviewForm.querySelector('[name="service"]').value;
+    const review = reviewForm.querySelector('[name="review"]').value;
+
+    const { error } = await supabaseClient
+        .from("reviews")
+        .insert({
+            name: name,
+            rating: Number(rating),
+            service: service,
+            review: review,
+            approved: false
+        });
+
+    if (error) {
+        console.error(error);
+        button.textContent = "Błąd — spróbuj ponownie";
+        button.disabled = false;
+        return;
+    }
+
+    reviewForm.reset();
+
+    button.textContent = "Wysłano ✓";
+
+    setTimeout(() => {
+        button.textContent = "Wyślij opinię →";
+        button.disabled = false;
+    }, 3000);
+});
+</script>
+<script>
+async function loadReviews() {
+
+    const reviewsGrid = document.getElementById("reviews-grid");
+
+    const { data, error } = await supabaseClient
+        .from("reviews")
+        .select("name, rating, review, service")
+        .eq("approved", true)
+        .order("id", { ascending: false });
+
+    if (error) {
+        console.error("Błąd pobierania opinii:", error);
+        return;
+    }
+
+    reviewsGrid.innerHTML = "";
+
+    data.forEach(review => {
+
+        const card = document.createElement("div");
+        card.className = "review-card";
+
+        const stars = "★".repeat(review.rating);
+
+        card.innerHTML = `
+            <div class="stars">${stars}</div>
+
+            <p class="review-text">
+                „${review.review}”
+            </p>
+
+            <div class="review-author">
+
+                <span>
+                    ${review.name.substring(0, 2).toUpperCase()}
+                </span>
+
+                <div>
+                    <strong>${review.name}</strong>
+                    <small>${review.service}</small>
+                </div>
+
+            </div>
+        `;
+
+        reviewsGrid.appendChild(card);
+    });
+}
+
+loadReviews();
+</script>
+</body>
+
+</html>

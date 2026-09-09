@@ -1,0 +1,1460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+header {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(#0008, #0008), #111;
+}
+
+header h1 {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 22px;
+    color: #242424;
+    margin-bottom: 30px;
+}
+
+header a {
+    background: white;
+    color: black;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-bottom: 35px;
+}
+
+section div {
+    background: #171717;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+section div h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+section div p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 42px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+}/* HERO */
+
+.hero {
+    display: block;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 75% 40%, #333 0%, #111 35%, #050505 70%);
+
+    padding: 0 7%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #ffffff08;
+    border-radius: 50%;
+    right: -150px;
+    top: 20%;
+    filter: blur(5px);
+}
+
+nav {
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+
+    padding-top: 17vh;
+}
+
+.small-title {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 8vw, 110px);
+    line-height: 0.9;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #888;
+}
+
+.description {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+
+    background: white;
+    color: black;
+
+    padding: 17px 28px;
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background: #ddd;
+}
+
+@media (max-width: 700px) {
+
+    .menu {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 25px;
+    }
+
+    .hero-content {
+        padding-top: 15vh;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+}/* =========================
+   GALERIA REALIZACJI
+========================= */
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 25px;
+}
+
+.gallery-header {
+    margin-bottom: 50px;
+}
+
+.gallery-label {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.gallery-header h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.gallery-description {
+    color: #999;
+    font-size: 17px;
+    max-width: 600px;
+}
+
+/* SIATKA ZDJĘĆ */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #171717;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* CIEMNA WARSTWA */
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.05) 60%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* TEKST NA ZDJĘCIU */
+
+.gallery-overlay {
+    position: absolute;
+    left: 30px;
+    bottom: 25px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s ease;
+}
+
+.gallery-overlay span {
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.gallery-overlay p {
+    color: #ccc;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* HOVER */
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* PIERWSZE ZDJĘCIE WIĘKSZE */
+
+.gallery-item:first-child {
+    grid-column: span 2;
+    height: 500px;
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .gallery-section {
+        padding: 80px 20px;
+    }
+
+    .gallery-header h2 {
+        font-size: 36px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 350px;
+    }
+
+    .gallery-item:first-child {
+        grid-column: span 1;
+        height: 350px;
+    }
+
+    .gallery-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .gallery-item::after {
+        opacity: 1;
+    }
+}/* =========================
+   GALERIA REALIZACJI
+========================= */
+
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 25px;
+}
+
+.gallery-header {
+    margin-bottom: 45px;
+}
+
+.gallery-label {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.gallery-header h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.gallery-description {
+    color: #aaa;
+    font-size: 17px;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* SIATKA */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+/* POJEDYNCZE ZDJĘCIE */
+
+.gallery-item {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #111;
+    cursor: pointer;
+}
+
+/* PIERWSZE ZDJĘCIE - DUŻE */
+
+.gallery-item:first-child {
+    grid-column: span 2;
+    height: 520px;
+}
+
+/* ZDJĘCIA */
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+/* CIEMNA WARSTWA */
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.05) 65%
+    );
+    pointer-events: none;
+}
+
+/* TEKST NA ZDJĘCIU */
+
+.gallery-overlay {
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    z-index: 2;
+    background: rgba(15,15,15,0.92);
+    padding: 18px 24px;
+    border-radius: 10px;
+    min-width: 220px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-overlay span {
+    display: block;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.gallery-overlay p {
+    color: #aaa;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* HOVER */
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(-5px);
+}
+
+/* EFEKT NAJECHANIA */
+
+.gallery-item {
+    transition: box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .gallery-section {
+        padding: 70px 20px;
+    }
+
+    .gallery-header h2 {
+        font-size: 36px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item:first-child {
+        grid-column: span 1;
+        height: 400px;
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+
+    .gallery-overlay {
+        left: 15px;
+        bottom: 15px;
+        padding: 14px 18px;
+    }
+
+    .gallery-overlay span {
+        font-size: 18px;
+    }
+}/* =========================
+   PREMIUM SMOOTH SCROLL
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Delikatne przyciemnienie strony */
+body {
+    transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+body.scroll-transition {
+    opacity: 0.65;
+    filter: blur(2px);
+}
+
+/* Sekcje lekko pojawiają się przy przewijaniu */
+section {
+    scroll-margin-top: 30px;
+}css
+/* =========================
+   KONTAKT — PREMIUM
+========================= */
+
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 25px;
+}
+
+.contact-header {
+    margin-bottom: 50px;
+}
+
+.contact-label {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.contact-header h2 {
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    color: #999;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+/* GŁÓWNA KARTA */
+
+.contact-box {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 20px;
+}
+
+/* FORMULARZ */
+
+.contact-box form {
+    background: #141414;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-box input,
+.contact-box select,
+.contact-box textarea {
+    width: 100%;
+    background: #0c0c0c;
+    border: 1px solid #292929;
+    border-radius: 9px;
+    padding: 16px 18px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.contact-box input::placeholder,
+.contact-box textarea::placeholder {
+    color: #666;
+}
+
+.contact-box input:focus,
+.contact-box select:focus,
+.contact-box textarea:focus {
+    border-color: #666;
+    background: #101010;
+}
+
+.contact-box select {
+    color: #aaa;
+    cursor: pointer;
+}
+
+.contact-box textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* PRZYCISK */
+
+.contact-box button {
+    border: none;
+    background: white;
+    color: black;
+    padding: 17px 24px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 5px;
+}
+
+.contact-box button:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+/* INSTAGRAM */
+
+.instagram-box {
+    background: linear-gradient(145deg, #181818, #101010);
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 35px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+
+.instagram-box::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #ffffff08;
+    top: -80px;
+    right: -70px;
+}
+
+.instagram-box span {
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.instagram-box h3 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.instagram-box a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background: #202020;
+    border: 1px solid #303030;
+    padding: 15px 18px;
+    border-radius: 9px;
+    transition: 0.3s ease;
+}
+
+.instagram-box a:hover {
+    background: #292929;
+    transform: translateY(-2px);
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .contact-section {
+        padding: 80px 20px;
+    }
+
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-box form {
+        padding: 25px;
+    }
+
+    .instagram-box {
+        min-height: 280px;
+        padding: 25px;
+    }
+
+    .instagram-box h3 {
+        font-size: 24px;
+    }
+}/* =========================================
+   📱 PROFESJONALNA WERSJA MOBILNA
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* ---------- OGÓLNE ---------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    .hero {
+        min-height: 100svh;
+        padding: 0 20px;
+    }
+
+    nav {
+        height: 75px;
+    }
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 1.5px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero-content {
+        padding-top: 16vh;
+        max-width: 100%;
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(52px, 16vw, 72px);
+        line-height: 0.92;
+        margin-bottom: 25px;
+    }
+
+    .description {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .button {
+        width: 100%;
+        text-align: center;
+        padding: 16px 20px;
+        border-radius: 8px;
+    }
+
+
+    /* ---------- OFERTA ---------- */
+
+    #oferta {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    #oferta h2 {
+        font-size: 34px;
+        margin-bottom: 25px;
+    }
+
+    #oferta > div {
+        padding: 22px;
+        margin-bottom: 14px;
+        border-radius: 12px;
+    }
+
+    #oferta > div h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    #oferta > div p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    #oferta > div strong {
+        font-size: 16px;
+    }
+
+
+    /* ---------- GALERIA ---------- */
+
+    .gallery-section {
+        padding: 75px 20px;
+    }
+
+    .gallery-header {
+        margin-bottom: 30px;
+    }
+
+    .gallery-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .gallery-header h2 {
+        font-size: 34px;
+        line-height: 1.1;
+    }
+
+    .gallery-description {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .gallery-item,
+    .gallery-item:first-child {
+        grid-column: span 1;
+        height: 310px;
+        border-radius: 12px;
+    }
+
+    .gallery-item:first-child {
+        height: 350px;
+    }
+
+    .gallery-overlay {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        min-width: 0;
+        padding: 14px 16px;
+        border-radius: 9px;
+    }
+
+    .gallery-overlay span {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .gallery-overlay p {
+        font-size: 13px;
+    }
+
+    /* Na telefonie nie potrzebujemy powiększania zdjęcia */
+    .gallery-item:hover img {
+        transform: none;
+    }
+
+
+    /* ---------- KONTAKT ---------- */
+
+    .contact-section {
+        padding: 80px 20px;
+    }
+
+    .contact-header {
+        margin-bottom: 30px;
+    }
+
+    .contact-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .contact-header h2 {
+        font-size: 38px;
+        line-height: 1.05;
+        margin-bottom: 16px;
+    }
+
+    .contact-description {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .contact-box {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .contact-box form {
+        padding: 20px;
+        gap: 13px;
+        border-radius: 13px;
+    }
+
+    .contact-box input,
+    .contact-box select,
+    .contact-box textarea {
+        font-size: 16px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .contact-box textarea {
+        min-height: 130px;
+    }
+
+    .contact-box button {
+        width: 100%;
+        padding: 16px;
+        font-size: 15px;
+        margin-top: 3px;
+    }
+
+
+    /* ---------- POTWIERDZENIE FORMULARZA ---------- */
+
+    #form-success {
+        display: none;
+        padding: 16px;
+        margin-top: 4px;
+        background: #1b1b1b;
+        border: 1px solid #303030;
+        border-radius: 9px;
+    }
+
+    #form-success strong {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    #form-success p {
+        color: #888;
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+
+    /* ---------- INSTAGRAM ---------- */
+
+    .instagram-box {
+        min-height: 250px;
+        padding: 22px;
+        border-radius: 13px;
+    }
+
+    .instagram-box span {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .instagram-box h3 {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    .instagram-box a {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+        font-size: 14px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 25px 20px;
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================
+   📱 BARDZO MAŁE TELEFONY
+========================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-content {
+        padding-top: 12vh;
+    }
+
+    .contact-header h2 {
+        font-size: 34px;
+    }
+
+    .gallery-item,
+    .gallery-item:first-child {
+        height: 280px;
+    }
+}/* =========================================
+   📱 MENU MOBILNE
+========================================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10;
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+   .menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+
+    background: rgba(10, 10, 10, 0.98);
+    z-index: 100;
+
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+    .menu a {
+    padding: 12px 15px;
+    margin: 0 !important;
+    background: transparent !important;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background: #222 !important;
+    color: white;
+}
+
+    .menu a:active {
+        background: #222;
+    }
+}/* ===== POPRAWKA MENU TELEFON ===== */
+
+@media (max-width: 700px) {
+
+    .menu {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        gap: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        padding: 10px 0 !important;
+
+        opacity: 0;
+        transform: translateY(-15px);
+        pointer-events: none;
+
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .menu a {
+        display: block !important;
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 12px 15px !important;
+
+        text-align: center !important;
+        line-height: 1.2 !important;
+
+        background: transparent !important;
+        color: white !important;
+    }
+}/* =========================
+   OPINIE KLIENTÓW
+========================= */
+
+.reviews-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 25px;
+}
+
+.reviews-header {
+    background: transparent !important;
+    padding: 0 !important;
+    margin-bottom: 50px !important;
+}
+
+.reviews-label {
+    font-size: 13px !important;
+    letter-spacing: 3px;
+    color: #888 !important;
+    margin-bottom: 15px !important;
+    text-transform: uppercase;
+}
+
+.reviews-header h2 {
+    font-size: clamp(40px, 6vw, 64px);
+    line-height: 1;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.reviews-description {
+    font-size: 17px !important;
+    color: #888 !important;
+    max-width: 550px;
+    line-height: 1.7;
+}
+
+
+/* KARTY */
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review-card {
+    background: #141414 !important;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 30px !important;
+    margin: 0 !important;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    border-color: #444;
+}
+
+
+/* GWIAZDKI */
+
+.stars {
+    font-size: 18px;
+    letter-spacing: 4px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+
+/* TEKST OPINII */
+
+.review-text {
+    font-size: 16px !important;
+    line-height: 1.7;
+    color: #ccc !important;
+    margin-bottom: 30px !important;
+}
+
+
+/* AUTOR */
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.review-author > span {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #222;
+    color: white;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.review-author div {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.review-author strong {
+    display: block;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.review-author small {
+    color: #666;
+    font-size: 12px;
+}
+
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .reviews-section {
+        padding: 90px 20px;
+    }
+
+    .reviews-header {
+        margin-bottom: 35px !important;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .review-card {
+        padding: 25px !important;
+    }
+
+    .review-text {
+        font-size: 15px !important;
+    }
+
+}/* =========================
+   FORMULARZ OPINII
+========================= */
+
+.review-form-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px 40px;
+}
+
+.review-form-box {
+    background: #141414 !important;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 40px !important;
+    margin: 0 !important;
+}
+
+.review-form-box h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.review-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 15px 16px;
+    background: #0d0d0d !important;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    color: white !important;
+    font-size: 15px;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+    color: #666;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus {
+    border-color: #555;
+    background: #111 !important;
+}
+
+.review-form select {
+    color: #aaa !important;
+}
+
+.review-form textarea {
+    grid-column: 1 / -1;
+    min-height: 120px;
+    resize: vertical;
+}
+
+.review-form button {
+    grid-column: 1 / -1;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: white !important;
+    color: black !important;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.review-form button:hover {
+    transform: translateY(-2px);
+    background: #ddd !important;
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    .review-form-section {
+        padding: 0 20px 30px;
+    }
+
+    .review-form-box {
+        padding: 25px !important;
+    }
+
+    .review-form-box h2 {
+        font-size: 26px;
+    }
+
+    .review-form {
+        grid-template-columns: 1fr;
+    }
+
+    .review-form textarea,
+    .review-form button {
+        grid-column: auto;
+    }
+}/* ===== POPRAWKA NAPISU KACPER DETAILING ===== */
+
+.hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    text-align: center;
+    line-height: 0.95;
+    margin: 20px 0 30px;
+}
+
+.hero h1 span {
+    display: block;
+    text-align: center;
+}
+
+.hero .description {
+    text-align: center;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
